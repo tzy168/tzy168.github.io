@@ -1,7 +1,7 @@
 ---
 title: How to Install and use WhatATheme?
 layout: post
-post-image: https://www.4399.com
+post-image: https://s11.ax1x.com/2023/12/22/pi7l6ht.jpg
 description: This post will guide you to install WhatATheme on your Jekyll site, follow
   the easy steps to set up WhatATheme.
 tags:
