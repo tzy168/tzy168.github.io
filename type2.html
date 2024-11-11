@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .text{
+    position: relative;
+    color: rgb(0, 5, 9);
+    font-size: 60px;
+    padding: 2px;
+}
+    .text::after{
+    content: "";
+    width: 2px;
+    height: 85%;
+    position: absolute;
+    top:0;
+    right: 0;
+    background: rgb(0, 0, 0);
+    animation: blink 0.9s linear infinite;
+}
+@keyframes blink{
+    0%,48%{
+       opacity: 0;
+    }
+    50%,100%{
+        opacity: 1;
+    }
+}
+</style>
+<body>
+    <span class="text"></span>
+    <script>
+        let content1 = 'Welcome To Here.';
+        let content2 = 'This is my blog.';
+        let content3 = 'I am a web developer.';
+        let content4 = 'Nice to meet you.';
+        let content = [content1,content2,content3,content4]
+        let text = document.querySelector('.text');
+        let i=0;
+        function addChar(content){
+            let timer = setInterval(function(){
+                text.innerHTML += content[i].charAt(0);
+                content[i] = content[i].substring(1);
+                if(content[i].length == 0){
+                    clearInterval(timer);
+                    setTimeout(function(){
+                        i+=1;
+                        if(i == content.length){
+                            return;
+                        }
+                        popChar(text.innerHTML);
+                        addChar(content);
+                    },1000)
+                   
+                }
+            },150)
+        }
+        function popChar(content){
+            let timer = setInterval(function(){
+                text.innerHTML = text.innerHTML.substring(0,text.innerHTML.length-1);
+                if(text.innerHTML.length == 0){
+                    clearInterval(timer);
+                }
+            },6)
+        } 
+        
+        // addChar(content);
+        if(i!=-1){
+            addChar(content);
+        }
+        
+    </script>
+</body>
+</html>
