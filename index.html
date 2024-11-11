@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myWeb</title>
-    <script src="./打字2.html"></script>
     <style>
         body{
             background: url(./bg1.jpg);
             background-size: cover;
-            /* background-attachment: fixed; */
+            background-repeat: no-repeat;
         }
         .main{
             width: 100%;
@@ -22,7 +21,7 @@
         header{
             /* border: 1px solid black; */
             border-radius: 10px;
-            /* width: 100%; */
+            /* width: 100vw; */
             padding: 2vw;
             /* margin: 0.3vw; */
             color: whitesmoke;
@@ -33,7 +32,7 @@
         }
         footer{
             /* border: 1px solid black; */
-            border-radius: 10px;
+            border-radius: 2px;
             /* width: 100%; */
             padding: 5px;
             margin: 5px;
@@ -41,29 +40,33 @@
             color: whitesmoke;
             text-align: center;
             line-height: 50%;
+            /* background:rgba(245, 245, 245, 0.349) */
+
         }
         h1{
             color: rgba(247, 248, 243, 0.865);
             transition: 0.5s all linear;
             display: inline;
-            font-size: 8rem;
+            font-size: 8.8rem;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
         }
         /* h1:hover{
            text-shadow: 0 0 5px deeppink;
         } */
-        .title{
-            /* background-image: url(./01.png); */
-            /* color: transparent;
-            background-clip: text; */
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
-        }
-
         .text{
             position: relative;
             color: rgba(247, 248, 243, 0.865);
-            font-size: 60px;
+            font-size: 2rem;
             padding: 2px;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        @media screen and (max-width: 424px) {
+            h1{
+                font-size: 6.6rem;
+            }
+            .text{
+            font-size: 1.5rem;
+            }
         }
         .text::after{
             content: "";
@@ -90,7 +93,7 @@
     <div class="main">
         <span class="text"></span>
         <header>
-            <h1 class="title">THIS IS <br> MY WEB...</h1><br>
+            <h1 class="title">THIS IS <br> MY WEB</h1><br>
             <a href="./htmlcss.html">html&css</a>
             <a href="./resume.html">简历</a>
             <a href="./front.html">学习路线图</a><br>
