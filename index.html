@@ -63,25 +63,26 @@
             color: rgba(247, 248, 243, 0.865);
             font-size: 60px;
             padding: 2px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
         }
         .text::after{
             content: "";
-            width: 2px;
+            width: 3px;
             height: 80%;
             position: absolute;
             top:0;
             right: 0;
             background: rgba(247, 248, 243, 0.865);
-            animation: blink 0.9s linear infinite;
+            animation: blink 0.8s linear infinite;
     }
-@keyframes blink{
-    0%,48%{
-       opacity: 0;
-    }
-    50%,100%{
-        opacity: 1;
-    }
-}
+            @keyframes blink{
+                0%,48%{
+                opacity: 0;
+                }
+                50%,100%{
+                    opacity: 1;
+                }
+            }
     </style>
 </head>
 
