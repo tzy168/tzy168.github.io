@@ -84,14 +84,7 @@
             text-decoration: underline;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
         }
-        @media screen and (max-width: 424px) {
-            h1{
-                font-size: 6.6rem;
-            }
-            .text{
-            font-size: 1.5rem;
-            }
-        }
+
         .text::after{
             content: "";
             width: 3px;
@@ -131,6 +124,17 @@
         /* filter: blur(2px); */
     }
 
+        @media screen and (max-width: 767px) {
+            h1{
+                font-size: 6.6rem;
+            }
+            nav{
+                border-bottom: 1px solid rgba(172, 170, 170, 0.655);
+            }
+            .text{
+                font-size: 1rem;
+                }
+        }
     /* 模糊效果 */
     .blurred {
         filter: blur(1px);
@@ -167,7 +171,9 @@
         </nav>
         
         <header>
-            <h1 class="title">THIS IS <br><span class="text"></span><br> MY WEB</h1><br>
+            <h1 class="title">THIS IS <br>
+                <span class="text"></span><br>
+                 MY WEB</h1><br>
             <a href="./html&css/htmlcss.html">html&css</a>/
             <a href="./pages/resume.html">简历</a>/
             <a href="./pages/front.html">学习路线图</a><br>
@@ -178,8 +184,8 @@
     <!-- <footer>
     </footer> -->
     <script>
-        let content1 = 'Welcome To Here!';
-        let content2 = 'This is my WebPage，';
+        let content1 = 'Welcome Here!';
+        let content2 = 'This is my Personal Web page.';
         let content3 = 'I am a web developer.';
         let content4 = 'Nice to meet you!';
         let content = [content1,content2,content3,content4]
@@ -198,10 +204,10 @@
                         }
                         popChar(text.innerHTML);
                         addChar(content);
-                    },1000)
+                    },1300)
                    
                 }
-            },150)
+            },176)
         }
         function popChar(content){
             let timer = setInterval(function(){
