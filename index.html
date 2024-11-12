@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myWeb</title>
+    <!-- iconfont -->
+    <script src="//at.alicdn.com/t/c/font_4742292_m56qbipwrcl.js"></script>
     <style>
         body{
             background: url(./bg1.jpg);
+            /* background:fixed; */
+            background-attachment: fixed;
             background-size: cover;
             background-repeat: no-repeat;
         }
         .main{
             width: 100%;
-            height: 100vh;
+            /* height: 100vh; */
         }
         a{
             text-decoration: none;
             margin: 5px;
             color: rgba(240, 248, 255, 0.689);
+            transition: all 0.1s linear;
+            display: inline-block;
+        }
+        a:hover{
+            transform: translateY(-2px);
         }
         header{
             /* border: 1px solid black; */
@@ -25,15 +34,19 @@
             /* width: 100vw; */
             padding: 2vw;
             /* margin: 0.3vw; */
-            color: whitesmoke;
-            /* line-height: 1.2rem; */
+            color: rgba(245, 245, 245, 0.811);
+            line-height: 6.2rem;
             text-align: center;
-            background:rgba(245, 245, 245, 0.349)
+            /* background:rgba(245, 245, 245, 0.349); */
             /* background-size: cover; */
+            transition: all 0.3s linear;
+            margin-top: 9vh;
+            /* filter: blur(1px); */
+            height: 60vh;
         }
         footer{
             /* border: 1px solid black; */
-            border-radius: 2px;
+            border-radius: 5px;
             /* width: 100%; */
             padding: 5px;
             margin: 5px;
@@ -41,24 +54,32 @@
             color: whitesmoke;
             text-align: center;
             line-height: 50%;
+            position: s;
             /* background:rgba(245, 245, 245, 0.349) */
-
         }
         h1{
-            color: rgba(247, 248, 243, 0.865);
+            /* color: rgba(247, 248, 243, 0.769); */
+            color: transparent;
             transition: 0.5s all linear;
             display: inline;
             font-size: 8.8rem;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
+            /* text-decoration: underline; */
+            -webkit-text-stroke:2px rgba(247, 248, 243, 0.769);
         }
-        /* h1:hover{
-           text-shadow: 0 0 5px deeppink;
-        } */
+        h1:hover{
+            color: rgba(247, 248, 243, 0.797);
+            -webkit-text-stroke:2px rgba(247, 248, 243, 0.769);
+            /* font-size: 10rem; */
+        }
+
         .text{
+            /* display: inline-block; */
             position: relative;
             color: rgba(247, 248, 243, 0.865);
             font-size: 2rem;
             padding: 2px;
+            text-decoration: underline;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
         }
         @media screen and (max-width: 424px) {
@@ -72,13 +93,13 @@
         .text::after{
             content: "";
             width: 3px;
-            height: 80%;
+            height: 85%;
             position: absolute;
-            top:0;
+            top: 0;
             right: 0;
             background: rgba(247, 248, 243, 0.865);
             animation: blink 0.8s linear infinite;
-    }
+        }
             @keyframes blink{
                 0%,48%{
                 opacity: 0;
@@ -87,30 +108,78 @@
                     opacity: 1;
                 }
             }
+            .icon{
+               width: 30px;
+               height: 30px;
+            }
+    nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6vh;
+        /* background: rgba(245, 245, 245, 0.845); */
+        display: flex;
+        /* justify-content: space-between; */
+        align-items: center;
+        /* border:0.5px solid gray; */
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        line-height: 50%;
+        /* filter: blur(2px); */
+    }
+
+    /* 模糊效果 */
+    .blurred {
+        filter: blur(1px);
+        transition: filter 0.3s ease;
+        }
+
     </style>
 </head>
 
 <body>
     <div class="main">
-        <span class="text"></span>
+        <nav class="navbar">
+            <a class="mymedia" href="http://github.com/tzy168" target="_blank">
+                <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-github"></use>
+                </svg>    
+            </a>
+            <a href="https://space.bilibili.com/27181026?spm_id_from=333.999.0.0" target="_blank">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-bilibili-line"></use>
+                </svg>                
+            </a>
+            <a href="https://steamcommunity.com/profiles/76561199209517801/" target="_blank">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-steam"></use>
+                </svg>                
+            </a>
+            <a class="tiktok" href=" https://v.douyin.com/iAawwLmY/ 0@5.com" target="_blank">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-douyin2"></use>
+                </svg>                
+            </a>
+
+        </nav>
+        
         <header>
-            <h1 class="title">THIS IS <br> MY WEB</h1><br>
-            <a href="./htmlcss.html">html&css</a>
-            <a href="./resume.html">简历</a>
+            <h1 class="title">THIS IS <br><span class="text"></span><br> MY WEB</h1><br>
+            <a href="./htmlcss.html">html&css</a>/
+            <a href="./resume.html">简历</a>/
             <a href="./front.html">学习路线图</a><br>
-            
         </header>
         
 
     </div>        
-    <footer>
-        <a href="http://github.com/tzy168">github</a>
-    </footer>
+    <!-- <footer>
+    </footer> -->
     <script>
-let content1 = 'Welcome To Here.';
-        let content2 = 'This is my blog.';
+        let content1 = 'Welcome To Here!';
+        let content2 = 'This is my WebPage，';
         let content3 = 'I am a web developer.';
-        let content4 = 'Nice to meet you.';
+        let content4 = 'Nice to meet you!';
         let content = [content1,content2,content3,content4]
         let text = document.querySelector('.text');
         let i=0;
@@ -140,8 +209,12 @@ let content1 = 'Welcome To Here.';
                 }
             },6)
         } 
-        
-            addChar(content);  
+        addChar(content); 
+
+        let tk = document.querySelector('.tiktok');
+        // tk.onclick = function(){
+        //     window.open('URL_ADDRESS');
+        // }
     </script>
 </body>
 </html>

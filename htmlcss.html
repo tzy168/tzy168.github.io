@@ -2064,16 +2064,17 @@
                     <p><a href="#new-trans">过渡</a></p>
                     <p><a href="#new-anima">动画</a></p>
                     <p><a href="#res-layout">响应式布局</a></p>
+                    <p><a href="#bfc">BFC</a></p>
                 </div>
        </div>
        
         </div>
-                <div class="sticky-element" style="position: sticky;
+            <div class="sticky-element" style="position: sticky;
                 border-radius: 15px;
                 top: 10px;
                 background-color: rgba(173, 216, 230, 0.317);">
                 This is a sticky element.
-                </div>
+            </div>
 
         <fieldset>
             <legend>布局</legend>
@@ -2532,7 +2533,7 @@
                 <li>文本描边</li>
                 <p>text-stroke 没啥用 可做空心文字
                 </p>
-                <h2 style="-webkit-text-stroke: 2px red;">text-stroke</h2>
+                <h2 style="-webkit-text-stroke: 2px black;color: transparent;">text-stroke</h2>
             </ol>
         </fieldset>
         
@@ -2841,7 +2842,8 @@
 
 
         </fieldset>
-        <h1>BFC</h1>
+
+        <h1  id="bfc">BFC</h1>
         <p>BFC(Block Formatting Context) 块级格式化上下文</p>
             <div style="width: 30vw; background: gray;border: 2px solid;overflow: auto;">
                 <div class="box-bfc" style="height: 10vw;width: 10vw;background: red; margin: 10px; float: left;">1</div>
@@ -2868,6 +2870,10 @@
             <p>12. display为contents;</p><br>
             <p>13. display为flow-root;</p><br>
         </ol>
+
+        <fieldset>
+            <legend>flex 伸缩盒模型</legend>
+        </fieldset>
         <footer id="footer">
         <a href="#section1">顶部锚点</a>
     </footer>
