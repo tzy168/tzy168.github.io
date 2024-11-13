@@ -7,94 +7,72 @@
     <!-- <script src="../masonry.pkgd.min.js"></script> -->
 </head>
 <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background: rgba(210, 197, 197, 0.63); 
+        /* background: url(./photo_bg.png);
+        background-size: cover; */
+    }
     .container{
-        width: 90%;
+        width: 80%;
         /* height: 100vh; */
         margin:0 auto;
         /* padding: 5px; */
-        border: 1px solid;
+        /* border: 1px solid; */
         /* display: inline-block; */
-        position: relative;
+        /* position: relative; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items:space-around;
+       
     }
-   .container img{
-        margin: 5px;
-        position: absolute;
-        transition: 0.3s all  linear;
+   .container .item{
+        margin: 10px;
+        /* position: absolute; */
+        transition: 0.2s all  linear;
+        border: 1.5px dashed;
+        border-radius: 5px;
+        box-shadow: 5px 5px 2px rgb(127, 149, 147);
+        display: block;
+        background-size: cover;
+    }
+    .item:hover{
+        transform: scale(1.05);
+    }
+    /* .item{
+        height: 15vh;
+        width: 200px;
+        background: skyblue;
         border: 1px solid;
-        box-shadow: 0px 0px 8px rgb(155, 152, 152);
-    }
+        margin: 5px;
+    } */
 </style>
 <body>
-    <div class="container"></div>
-    <script src="../masonry.pkgd.min.js">
+    <div class="container">
+    </div>
+    <script>
         let container = document.querySelector('.container');
-        // let imgWidth = 220;
+        let imgWidth = 220;
 
         function createImg() {
             for (let i = 1; i <= 10; i++) {
                 let img = document.createElement('img');
                 img.classList.add('item');
-                img.src = `../images/${i}.jpg`;
-                // img.style.width = imgWidth +'px';
-                // img.onload=calImgPosition;
-                // img.style.height = imgWidth + 'px';
-                container.appendChild(img);
+                src = `../images/${i}.jpg`;
+                let imgdiv = document.createElement('div');
+                imgdiv.classList.add('item');
+                imgdiv.style.width = imgWidth + 'px';
+                imgdiv.style.background = "url(" + src + ")"
+                imgdiv.style.height = imgWidth+100 + 'px';
+                imgdiv.style.backgroundSize = 'cover';
+                container.appendChild(imgdiv);
             }
         }
-
         createImg();
-
-        container.masonry({
-                itemSelector: '.item',
-                columnWidth: 200,
-                gutter: 10
-            });
-        // //计算有多少列
-        // function cal() {
-        //     let container_width = container.clientWidth;
-        //     let columns = Math.floor(container_width / imgWidth);
-        //     let sapce_number = columns + 1;
-        //     let left_space = container_width - imgWidth * columns;
-
-        //     let space = left_space / sapce_number;
-
-        //     return{
-        //         space:space,
-        //         columns:columns
-        //     };
-        // }
-
-        //计算每一个img的位置
-        // function calImgPosition() {
-        //     let info = cal();
-        //     let next_tops = new Array(info.columns)
-        //     next_tops.fill(0);
-
-        //     for (let i = 0; i < container.children.length; i++) {
-        //         let img = container.children[i];
-        //         let min_top = Math.min.apply(null, next_tops);
-        //         img.style.top = min_top + 'px';
-        //         let index = next_tops.indexOf(min_top);
-        //         next_tops[index] += img.height+info.space;
-
-        //         //计算横坐标
-        //         let left = (index+1)*info.sapce+index*imgWidth;
-        //         img.style.left = left + 'px';
-        //     }
-        //     let max = Math.max.apply(null, next_tops);
-        //     container.style.height = max + 'px';
-        // }
-
-        // calImgPosition();
-
-        // window.onload = calImgPosition;
-        // let timer = null;
-        // window.onresize = function() {
-        //     if (timer) {
-        //         clearTimeout(timer);
-        //     }
-        //     timer = setTimeout(calImgPosition, 100);
-        // }
 
     </script>
 </body>
