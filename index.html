@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myWeb</title>
     <!-- iconfont -->
-    <script src="//at.alicdn.com/t/c/font_4742292_d2ru81twqes.js"></script>
+    <script src="//at.alicdn.com/t/c/font_4742292_thtwx8tc15b.js"></script>
     <!-- favicon -->
     <link rel="icon" href="./images/head2.png" type="image/png">
     <style>
@@ -26,10 +26,32 @@
             color: rgba(240, 248, 255, 0.689);
             transition: all 0.1s linear;
             display: inline-block;
+            position: relative;
         }
         a:hover{
             transform: translateY(-2px);
         }
+
+        a::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: transparent;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            font-size: 0.8rem;
+        }
+            a:hover::after {
+                opacity: 1;
+            }
+
         header{
             /* border: 1px solid black; */
             border-radius: 10px;
@@ -150,29 +172,34 @@
     <div class="main">
         <nav class="navbar">
             <span class="name">@tzy</span>
-            <a class="mymedia" href="http://github.com/tzy168" target="_blank">
+            <a class="mymedia" href="http://github.com/tzy168" target="_blank"  data-tooltip="github">
                 <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-github1"></use>
                 </svg>    
             </a>
-            <a href="https://space.bilibili.com/27181026?spm_id_from=333.999.0.0" target="_blank">
+            <a href="https://space.bilibili.com/27181026?spm_id_from=333.999.0.0" target="_blank"  data-tooltip="bilibili">
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-bilibili-line"></use>
                 </svg>                
             </a>
-            <a href="https://steamcommunity.com/profiles/76561199209517801/" target="_blank">
+            <a href="https://steamcommunity.com/profiles/76561199209517801/" target="_blank" data-tooltip="steam">
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-steam"></use>
                 </svg>                
             </a>
-            <a class="tiktok" href=" https://v.douyin.com/iAawwLmY/ 0@5.com" target="_blank">
+            <a href=" https://v.douyin.com/iAawwLmY/ 0@5.com" target="_blank" data-tooltip="tiktok">
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-douyin2"></use>
                 </svg>                
             </a>
-            <a class="tiktok" href="https://x.com/HTZY168" target="_blank">
+            <a href="https://x.com/HTZY168" target="_blank" data-tooltip="X">
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-tuite"></use>
+                </svg>                
+            </a>
+            <a href="mailto:3265577395@qq.com" target="_blank" data-tooltip="e-mail">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-youxiang"></use>
                 </svg>                
             </a>            
         </nav>
@@ -228,10 +255,6 @@
         } 
         addChar(content); 
 
-        let tk = document.querySelector('.tiktok');
-        // tk.onclick = function(){
-        //     window.open('URL_ADDRESS');
-        // }
     </script>
 </body>
 </html>
