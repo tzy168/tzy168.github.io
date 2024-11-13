@@ -73,9 +73,10 @@
     }
     button{
         background: linear-gradient(deepskyblue,green);
-        border: none;
-        border-radius: 15px;
-        width: 3vw;
+        /* border: none; */
+        border-radius: 10px;
+        width: 4vw;
+        margin: 5px;
     }
     fieldset{
         border-radius: 5px;
@@ -663,6 +664,41 @@
         }
     }
    
+    .fl0{
+        width: 40vw;
+        height:40vw;
+        flex-wrap: wrap;
+        flex-direction: row;
+        border: 1px solid; 
+        margin: 5px; 
+        overflow: hidden;
+    }
+    .fl{
+        width: 9.84vw;
+        height: 9.83vw;
+        background: skyblue;
+        border: 1px solid;
+    }
+    .fl0:hover{
+       display: flex;
+    }
+
+    select{
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: gainsboro;
+        height: 25px;
+        border-radius: 8px;
+        padding: 5px;
+        margin: 5px;
+        border: 1px solid;
+    }
+
+    .flexbox{
+        border: 1px solid;
+        flex-grow: 1;
+    }
   </style>
 </head>
 
@@ -2065,6 +2101,8 @@
                     <p><a href="#new-anima">动画</a></p>
                     <p><a href="#res-layout">响应式布局</a></p>
                     <p><a href="#bfc">BFC</a></p>
+                    <p><a href="#flex-box">flex</a></p>
+
                 </div>
        </div>
        
@@ -2871,8 +2909,172 @@
             <p>13. display为flow-root;</p><br>
         </ol>
 
-        <fieldset>
+        <fieldset id="flex-box">
             <legend>flex 伸缩盒模型</legend>
+            <ol>
+                <li>display:flex</li>
+                <p>flex-warp: nowarp(默认)/warp 换行与否 <br>
+                    wrpa-reverse(反向换行) <br>
+                    flex-direction: row(默认) column(列) 主轴方向<br>
+                </p>
+            
+               <div class="fl0">
+                    <div class="fl fle1">1</div>
+                    <div class="fl fle2">2</div>
+                    <div class="fl fle3">3</div>
+                    <div class="fl fle3">4</div>
+                    <div class="fl fle3">5</div>
+                    <div class="fl fle3">6</div>
+                    <div class="fl fle3">7</div>
+                    <div class="fl fle3">8</div>
+                    <div class="fl fle3">9</div>
+                    <div class="fl fle3">10</div>
+                    <div class="fl fle3">11</div>
+                    <div class="fl fle3">12</div>
+                    <div class="fl fle3">13</div>
+                    <div class="fl fle3">14</div>
+                    <div class="fl fle3">15</div>
+
+               </div>
+               <li>felx-flow:主轴方向 换行方式(不推荐)</li>
+               <li>主轴对齐方式</li>
+               <p>
+                justify-content: flex-start(默认) 左对齐<br>
+                justify-content: flex-end 右对齐<br>
+                *justify-content: center 居中对齐<br>
+                *justify-content: space-between 两端对齐<br>
+                justify-content: space-around 平均对齐<br>
+                justify-content: space-evenly 平均对齐<br> 
+               </p>
+                <select name="elementSlector" id="seljust">
+                    <option value="flex-start">flex-start(默认)</option>
+                    <option value="flex-end">flex-end</option>
+                    <option value="center">center</option>
+                    <option value="space-between">space-between</option>
+                    <option value="space-around">space-around</option>
+                    <option value="space-evenly">space-evenly</option>
+                </select>
+               <div class="just" style="display: flex;
+               justify-content: flex-start;
+               height: 10vw;width: 50vw; border: 1px solid;">
+                <div class="flexbox" style="height: 10vw;width: 10vw;background: skyblue;">1</div>
+                <div class="flexbox" style="height: 10vw;width: 10vw;background: skyblue;">1</div>
+                <div class="flexbox" style="height: 10vw;width: 10vw;background: skyblue;">1</div>
+               
+            </div>
+               <li>侧轴对齐方式:单行</li>
+               <p>
+                align-items: flex-start(默认) 左对齐<br>
+                align-items: flex-end 右对齐<br>
+                align-items: center 居中对齐<br>
+                align-items: space-between 两端对齐<br>
+                align-items: space-around 平均对齐<br>
+                *align-items: space-evenly 平均对齐<br>
+                align-items: stretch 拉伸到父容器高<br>
+               </p>
+                <select name="elementSlector" id="selalign">
+                    <option value="flex-start">flex-start(默认)</option>
+                    <option value="flex-end">flex-end</option>
+                    <option value="center">center</option>
+                    <option value="space-between">space-between</option>
+                    <option value="space-around">space-around</option>
+                    <option value="space-evenly">space-evenly</option>
+                    <option value="stretch">stretch</option>
+                    <option value="baseline">baseline</option>
+
+                </select>
+               <div class="align" style="display: flex;
+               align-items: flex-start ;flex-wrap:wrap;
+               justify-content: center;
+               height: 50vw;width: 50vw; border: 1px solid;">
+                <div class="flexbox" style="height: 18vw;width: 18vw;background: skyblue;">1</div>
+                <div class="flexbox" style="height: 10vw;width: 10vw;background: skyblue;font-size: 30px;">1</div>
+                <div class="flexbox" style="height: 15vw;width: 15vw;background: skyblue;">1</div>
+            </div>
+
+            <li>侧轴对齐方式:多行</li>
+            <p>
+                align-content: flex-start(默认) 左对齐<br>
+                align-content: flex-end 右对齐<br>
+                align-content: center 居中对齐<br>
+                align-content: space-between 两端对齐<br>
+                align-content: space-around flexitem之间的距离相等，且是边缘距离的2x。<br>
+                *align-content: space-evenly 平均对齐<br>
+                align-content: stretch 拉伸到父容器高<br>
+            </p>
+             <select name="elementSlector" id="selalignIt">
+                <option value="flex-start">flex-start(默认)</option>
+                <option value="flex-end">flex-end</option>
+                <option value="center">center</option>
+                <option value="space-between">space-between</option>
+                <option value="space-around">space-around</option>
+                <option value="space-evenly">space-evenly</option>
+                <option value="stretch">stretch</option>
+                <option value="baseline">baseline</option>
+            </select>
+            <div class="align-it" style="display: flex;
+            flex-wrap:wrap;
+            /* align-content: flex-start; */
+            justify-content: center;
+            height: 50vw;width: 50vw; border: 1px solid;">
+             <div class="flexbox" style="height: 18vw;width: 18vw;background: skyblue;">1</div>
+             <div class="flexbox" style="height: 10vw;width: 10vw;background: skyblue;font-size: 30px;">1</div>
+             <div class="flexbox" style="height: 15vw;width: 15vw;background: skyblue;">1</div>
+             <div class="flexbox" style="height: 15vw;width: 15vw;background: skyblue;">1</div>
+             <div class="flexbox" style="height: 15vw;width: 15vw;background: skyblue;">1</div>
+             <div class="flexbox" style="height: 15vw;width: 15vw;background: skyblue;">1</div>
+             <div class="flexbox" style="height: 15vw;width: 15vw;background: skyblue;">1</div>
+             <div class="flexbox" style="height: 15vw;width: 15vw;background: skyblue;">1</div>
+             
+            </div>
+
+            <li>水平垂直居中</li>
+            <p>justify-content：center</p>
+            <p>align-items：center</p>
+            /<br>
+            <p>margin:auto</p>
+            <div class="cen" style="display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vw;width: 50vw; border: 1px solid;">
+             <div class="flexbox" style="height: 18vw;width: 18vw;background: skyblue;">1</div>
+            </div>
+            <li>主轴基准长度</li>
+            <p>flex-basis: 100px;</p>
+            <div class="cen" style="display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vw;width: 50vw; border: 1px solid;">
+             <div style="flex-basis: 100px;height: 18vw;width: 18vw;background: skyblue;">1</div>
+            </div>
+
+            <li>伸缩性</li>
+            <p>* flex-grow: 1;</p>
+            <button class="fbut">伸</button>:均分剩余空间/各得到剩余空间/盒子个数
+            <div class="cen" style="display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vw;width: 50vw; border: 1px solid;">
+             <div class="flexbox t1" style="height: 18vw;width: 10vw;background: skyblue;">1</div>
+             <div class="flexbox t1" style="height: 18vw;width: 15vw;background: skyblue;">1</div>
+             <div class="flexbox t1" style="height: 18vw;width: 10vw;background: skyblue;">1</div>
+            </div>
+            <li>压缩</li>
+            <p>* flex-shrink: 1;</p>
+            <div class="cen" style="display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vw;width: 50vw; border: 1px solid;">
+             <div class="flexbox t1" style="height: 18vw;width: 10vw;background: skyblue;">1</div>
+             <div class="flexbox t1" style="height: 18vw;width: 15vw;background: skyblue;">1</div>
+             <div class="flexbox t1" style="height: 18vw;width: 10vw;background: skyblue;">1</div>
+            </div>
+
+
+
+
+        </ol>
+
         </fieldset>
         <footer id="footer">
         <a href="#section1">顶部锚点</a>
@@ -2881,6 +3083,31 @@
 
 </body>    
 <script>
+    let just = document.querySelector(".just");
+    let sel = document.getElementById("seljust");
+    sel.addEventListener("change",()=>{
+        just.style.justifyContent = sel.value;
+    })
+
+    let align = document.querySelector(".align");
+    let selalign = document.getElementById("selalign");
+    selalign.addEventListener("change",()=>{
+        align.style.alignItems = selalign.value;
+    })
+
+    let alignIt = document.querySelector(".align-it");
+    let selalignIt = document.getElementById("selalignIt");
+    selalignIt.addEventListener("change",()=>{
+        alignIt.style.alignContent = selalignIt.value;
+    })
+
+    let fbut = document.querySelector(".fbut");
+    let t = document.querySelectorAll(".t1");
+        fbut.addEventListener("click",()=>{
+            t[0].style.flexGrow = "3";
+            t[1].style.flexGrow = "1.5";
+            t[2].style.flexGrow = "1";
+        })
     // var canvas = document.getElementById('myCanvas');
     // var ctx = canvas.getContext('2d');
     // ctx.fillStyle = 'blue';
