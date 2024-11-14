@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myWeb</title>
     <!-- iconfont -->
-    <script src="//at.alicdn.com/t/c/font_4742292_thtwx8tc15b.js"></script>
+    <script src="//at.alicdn.com/t/c/font_4742292_wj1q7f9o88.js"></script>
     <!-- favicon -->
     <link rel="icon" href="./images/head2.png" type="image/png">
     <style>
@@ -165,16 +165,41 @@
             justify-content: center;
         }
 
+        .bgm-icon{
+            margin: 5px;
+            width: 30px;
+            height: 30px;
+            animation: mymusic 8s linear infinite;
+            /* animation-fill-mode:forwards; */
+            transition: all 2s linear;
+        }      
+        @keyframes mymusic {
+            from{
+                transform: rotateZ(0deg);
+            }
+            to{
+                transform: rotateZ(360deg);
+            }
+        }
+        /* .bgm-icon:hover{
+            transform: rotateZ(360deg);
+        } */
     </style>
 </head>
 
 <body>
     <div class="main">
         <nav class="navbar">
+            <span class="bgm">
+                <svg class="bgm-icon" aria-hidden="true">
+                    <use xlink:href="#icon-vynil"></use>
+                </svg>                
+                <audio class="bgm" src="./bgm.ogg" autoplay></audio>
+            </span>
             <span class="name">@tzy</span>
             <a class="mymedia" href="http://github.com/tzy168" target="_blank"  data-tooltip="github">
                 <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-github1"></use>
+                    <use xlink:href="#icon-github1"></use>
                 </svg>    
             </a>
             <a href="https://space.bilibili.com/27181026?spm_id_from=333.999.0.0" target="_blank"  data-tooltip="bilibili">
@@ -254,6 +279,20 @@
             },6)
         } 
         addChar(content); 
+
+        let bgm = document.querySelector('.bgm')
+        let bgmi = document.querySelector('.bgm-icon')
+
+        bgm.addEventListener('click',function(){
+            let audio = document.querySelector('.bgm audio');
+            if(audio.paused){
+                audio.play();
+                bgmi.style.animationPlayState = 'running';
+            }else{
+                audio.pause();
+                bgmi.style.animationPlayState = 'paused';
+            }
+        })
 
     </script>
 </body>
