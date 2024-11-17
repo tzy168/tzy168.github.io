@@ -17,7 +17,7 @@
         background-size: cover; */
     }
     .container{
-        width: 80%;
+        width: 90%;
         /* height: 100vh; */
         margin:0 auto;
         /* padding: 5px; */
@@ -50,7 +50,7 @@
     </div>
     <script>
         let container = document.querySelector('.container');
-        let imgWidth = 15;
+        let imgWidth = 12;
         let num = 20;
         function createImg() {
             for (let i = 1; i <= num; i++) {
@@ -61,7 +61,7 @@
                 imgdiv.classList.add('item');
                 imgdiv.style.width = imgWidth + 'vmax';
                 imgdiv.style.background = "url(" + src + ")"
-                imgdiv.style.height = 20 + 'vmax';
+                imgdiv.style.height = imgWidth + 'vmax';
                 imgdiv.style.backgroundSize = 'cover';
                 container.appendChild(imgdiv);
             }
