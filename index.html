@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>myWeb</title>
+    <title>REFE</title>
     <!-- iconfont -->
     <script src="//at.alicdn.com/t/c/font_4742292_wj1q7f9o88.js"></script>
     <!-- favicon -->
     <link rel="icon" href="./images/head2.png" type="image/png">
     <style>
         body{
-            background: url(./images/bg1.jpg);
-            /* background:fixed; */
+            /* background: url(./images/bg2.png); */
+            background:rgba(0, 0, 0, 0.329);
             background-attachment: fixed;
             background-size: cover;
             background-repeat: no-repeat;
+            transition: all 0.5s linear;
         }
+        /* body:hover{
+            background: url(./images/bg1.jpg);
+        } */
         .main{
             width: 100%;
             /* height: 100vh; */
@@ -23,7 +27,7 @@
         a{
             text-decoration: none;
             margin: 5px;
-            color: rgba(240, 248, 255, 0.689);
+            color: rgba(12, 210, 32, 0.689);
             transition: all 0.1s linear;
             display: inline-block;
             position: relative;
@@ -39,7 +43,7 @@
             left: 50%;
             transform: translateX(-50%);
             background-color: transparent;
-            color: white;
+            color: rgb(0, 0, 0);
             padding: 5px 10px;
             border-radius: 5px;
             white-space: nowrap;
@@ -58,7 +62,7 @@
             /* width: 100vw; */
             padding: 2vw;
             /* margin: 0.3vw; */
-            color: rgba(245, 245, 245, 0.811);
+            color: rgb(0, 0, 0);
             line-height: 6.2rem;
             text-align: center;
             /* background:rgba(245, 245, 245, 0.349); */
@@ -75,7 +79,7 @@
             padding: 5px;
             margin: 5px;
             height: 5vw;
-            color: whitesmoke;
+            color: rgb(0, 0, 0);
             text-align: center;
             line-height: 50%;
             position: s;
@@ -89,18 +93,18 @@
             font-size: 8.8rem;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
             /* text-decoration: underline; */
-            -webkit-text-stroke:2px rgba(247, 248, 243, 0.769);
+            -webkit-text-stroke:2px rgba(8, 123, 24, 0.769);
         }
         h1:hover{
-            color: rgba(247, 248, 243, 0.797);
-            -webkit-text-stroke:2px rgba(247, 248, 243, 0.769);
+            color: rgba(8, 123, 24, 0.769);
+            /* -webkit-text-stroke:2px rgba(247, 248, 243, 0.769); */
             /* font-size: 10rem; */
         }
 
         .text{
             /* display: inline-block; */
             position: relative;
-            color: rgba(247, 248, 243, 0.865);
+            color: rgba(7, 151, 9, 0.865);
             font-size: 2rem;
             padding: 2px;
             text-decoration: underline;
@@ -115,7 +119,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            background: rgba(247, 248, 243, 0.865);
+            background: rgba(0, 0, 0, 0.865);
             animation: blink 0.8s linear infinite;
         }
             @keyframes blink{
@@ -132,7 +136,7 @@
             }
         nav{
             position: fixed;
-            top: 0;
+            bottom: 0;
             left: 0;
             width: 100%;
             height: 6vh;
@@ -189,13 +193,29 @@
 
 <body>
     <div class="main">
-        <nav class="navbar">
             <span class="bgm">
                 <svg class="bgm-icon" aria-hidden="true">
                     <use xlink:href="#icon-vynil"></use>
                 </svg>                
                 <audio class="bgm" src="./bgm.ogg" autoplay></audio>
             </span>
+        
+        <header>
+            <h1 class="title">THIS IS <br>
+            
+                <span class="text"></span><br>
+                 MY WEB</h1><br>
+            <a href="./html&css/htmlcss.html">html&css</a>/
+            <a href="./pages/resume.html">简历</a>/
+            <a href="./pages/front.html">学习路线图</a>/
+            <a href="./pages/photo.html">life</a><br>
+        </header>
+        
+
+    </div>        
+    <footer>
+        <nav class="navbar">
+
             <span class="name">@tzy</span>
             <a class="mymedia" href="http://github.com/tzy168" target="_blank"  data-tooltip="github">
                 <svg class="icon" aria-hidden="true">
@@ -227,23 +247,8 @@
                     <use xlink:href="#icon-youxiang"></use>
                 </svg>                
             </a>            
-        </nav>
-        
-        <header>
-            <h1 class="title">THIS IS <br>
-            
-                <span class="text"></span><br>
-                 MY WEB</h1><br>
-            <a href="./html&css/htmlcss.html">html&css</a>/
-            <a href="./pages/resume.html">简历</a>/
-            <a href="./pages/front.html">学习路线图</a>/
-            <a href="./pages/photo.html">life</a><br>
-        </header>
-        
-
-    </div>        
-    <!-- <footer>
-    </footer> -->
+        </nav>        
+    </footer>
     <script>
         let content1 = 'Welcome Here!';
         let content2 = 'This is my Personal Web page.';
