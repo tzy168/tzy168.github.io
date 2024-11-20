@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        width: 200px;
+        height: 200px;
+        position: relative;
+        left: 200px;
+        top: 200px; 
+        background: aqua;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px #000;
+        /* transition: all 0.1s linear; */
+    }
+</style>
+<body>
+    <div></div>
+    <script>
+        let dv = document.querySelector('div')
+        dv.addEventListener('mousedown',function(e){
+            let x = e.clientX - dv.offsetLeft
+            let y = e.clientY - dv.offsetTop
+            document.onmousemove = function(e){
+                dv.style.left = e.clientX - x + 'px'
+                dv.style.top = e.clientY - y + 'px'
+            }
+        })
+        dv.addEventListener('mouseup',function(){
+            document.onmousemove = null
+        })
+    </script>
+</body>
+</html>
