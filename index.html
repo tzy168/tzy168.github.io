@@ -12,10 +12,11 @@
         body{
             /* background: url(./images/bg2.png); */
             background:rgba(0, 0, 0, 0.329);
-            background-attachment: fixed;
-            background-size: cover;
-            background-repeat: no-repeat;
+            /* background-attachment: fixed; */
+            /* background-size: cover; */
+            /* background-repeat: no-repeat; */
             transition: all 0.5s linear;
+            position: relative;
         }
         /* body:hover{
             background: url(./images/bg1.jpg);
@@ -26,7 +27,6 @@
         }
         a{
             text-decoration: none;
-            margin: 5px;
             color: rgba(4, 100, 13, 0.689);
             transition: all 0.1s linear;
             display: inline-block;
@@ -76,13 +76,12 @@
             /* border: 1px solid black; */
             border-radius: 5px;
             /* width: 100%; */
-            padding: 5px;
-            margin: 5px;
+            padding: 10px;
+            margin: 10px;
             height: 5vw;
             color: rgb(0, 0, 0);
             text-align: center;
             line-height: 50%;
-            position: s;
             /* background:rgba(245, 245, 245, 0.349) */
         }
         h1{
@@ -95,6 +94,7 @@
             /* text-decoration: underline; */
             -webkit-text-stroke:5px rgba(8, 123, 24, 0.769);
             text-shadow: 10px 5px 5px rgba(8, 123, 24, 0.769);
+            position: relative;
         }
         .my{
             color: rgba(8, 123, 24, 0.769);
@@ -148,13 +148,11 @@
             position: fixed;
             bottom: 0;
             left: 0;
-            width: 100%;
+            /* width: 100%; */
             height: 6vh;
             /* background: rgba(245, 245, 245, 0.845); */
             display: flex;
-            /* justify-content: space-between; */
             align-items: center;
-            /* border:0.5px solid gray; */
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
             line-height: 50%;
@@ -174,10 +172,7 @@
                 }
         }
     
-        .name{
-            display: inline-flex;
-            justify-content: center;
-        }
+
 
         .bgm-icon{
             margin: 5px;
@@ -195,13 +190,74 @@
                 transform: rotateZ(360deg);
             }
         }
-        /* .bgm-icon:hover{
-            transform: rotateZ(360deg);
-        } */
+
+        .contract{
+            /* background: #000; */
+            position: relative;
+            margin: 5px;
+            padding: 3px;
+            /* border: 1px solid; */
+            border-radius: 5px;
+            transition: 0.5s all linear;
+        }        
+        
+        .name{
+            position: absolute;
+            color: aliceblue;
+            font-size: 1.2rem;
+            left: 36%;
+            top: 35%;
+            z-index: 10;
+            margin: 0 auto;
+            font-weight: bold;
+            transition: 0.3s all linear;
+
+        }
+        .left1,.right1{
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            transition: 0.3s all linear;
+            z-index: 9;
+        }
+       .left1{
+            left: 0;
+            top: 0;
+            background: rgb(170, 160, 160);
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+
+        }
+        .right1{
+            right: 0;
+            bottom: 0;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            background: #b7b3b3;
+        }
+        .mymedia{
+            transition: 0.3s all linear;
+            opacity: 0;
+        }
+        .contract:hover{
+            .left1,.right1{
+                height: 0%;
+            }
+            .name{
+                /* overflow: hidden; */
+                opacity: 0;
+                z-index: -1;
+            }
+          .mymedia{
+                opacity: 1;
+            }
+        }
+
     </style>
 </head>
 
 <body>
+
     <div class="main">
             <span class="bgm">
                 <svg class="bgm-icon" aria-hidden="true">
@@ -209,54 +265,59 @@
                 </svg>                
                 <audio class="bgm" src="./bgm.ogg" autoplay></audio>
             </span>
-        
+
         <header>
             <h1 class="title">THIS IS <br>
-            
+                
                 <span class="text"></span><br>
                  <span class="my">MY</span> WEB</h1><br>
             <a href="./html&css/htmlcss.html">html&css</a>/
             <a href="./pages/resume.html">简历</a>/
             <a href="./pages/front.html">学习路线图</a>/
-            <a href="./pages/photo.html">life</a><br>
+            <a href="./pages/photo.html">life</a>/
+            <a href="./pages/case.html">Case</a>
         </header>
         
 
     </div>        
     <footer>
         <nav class="navbar">
-
-            <span class="name">@tzy</span>
-            <a class="mymedia" href="http://github.com/tzy168" target="_blank"  data-tooltip="github">
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-github1"></use>
-                </svg>    
-            </a>
-            <a href="https://space.bilibili.com/27181026?spm_id_from=333.999.0.0" target="_blank"  data-tooltip="bilibili">
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-bilibili-line"></use>
-                </svg>                
-            </a>
-            <a href="https://steamcommunity.com/profiles/76561199209517801/" target="_blank" data-tooltip="steam">
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-steam"></use>
-                </svg>                
-            </a>
-            <a href=" https://v.douyin.com/iAawwLmY/ 0@5.com" target="_blank" data-tooltip="tiktok">
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-douyin2"></use>
-                </svg>                
-            </a>
-            <a href="https://x.com/HTZY168" target="_blank" data-tooltip="X">
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-tuite"></use>
-                </svg>                
-            </a>
-            <a href="mailto:3265577395@qq.com" target="_blank" data-tooltip="e-mail">
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-youxiang"></use>
-                </svg>                
-            </a>            
+            
+            <div class="contract">
+                <p class="name">@TZY</p>
+                <div class="left1"></div>
+                <div class="right1"></div>
+                <a class="mymedia" href="http://github.com/tzy168" target="_blank"  data-tooltip="github">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-github1"></use>
+                    </svg>    
+                </a>
+                <a class="mymedia" href="https://space.bilibili.com/27181026?spm_id_from=333.999.0.0" target="_blank"  data-tooltip="bilibili">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-bilibili-line"></use>
+                    </svg>                
+                </a>
+                <a class="mymedia" href="https://steamcommunity.com/profiles/76561199209517801/" target="_blank" data-tooltip="steam">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-steam"></use>
+                    </svg>                
+                </a>
+                <a class="mymedia" href=" https://v.douyin.com/iAawwLmY/ 0@5.com" target="_blank" data-tooltip="tiktok">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-douyin2"></use>
+                    </svg>                
+                </a>
+                <a class="mymedia" href="https://x.com/HTZY168" target="_blank" data-tooltip="X">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-tuite"></use>
+                    </svg>                
+                </a>
+                <a class="mymedia" href="mailto:3265577395@qq.com" target="_blank" data-tooltip="e-mail">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-youxiang"></use>
+                    </svg>                
+                </a>               
+            </div>
         </nav>        
     </footer>
     <script>
