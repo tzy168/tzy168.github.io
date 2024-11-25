@@ -253,11 +253,141 @@
             }
         }
 
+        ul{
+            width: 100%;
+            height: 100vh;
+            position:fixed;
+            /* overflow: hidden; */
+        }
+        li{
+            list-style: none;
+            position: absolute;
+            display: block;
+            bottom: -200px;
+            opacity: 0.5;
+        }
+        li:nth-child(1){
+            width: 50px;
+            height: 50px;
+            background: rgb(52, 227, 90);
+            /* bottom: -100px; */
+            left: 15px;
+            animation: totop 8s linear infinite alternate;
+            animation-delay: 2s;
+        }
+        li:nth-child(2){
+            width: 70px;
+            height: 70px;
+            background: rgb(52, 227, 90);
+            /* bottom: 0px; */
+            left: 150px;
+            animation: totop 8s linear infinite alternate;
+            animation-delay: 3s;
+        }
+        li:nth-child(3){
+            width: 50px;
+            height: 50px;
+            background: rgb(52, 227, 90);
+            left: 230px;
+            animation: totop 8s linear infinite alternate;
+            animation-delay: 1s;
+
+        }
+        li:nth-child(4){
+            width: 120px;
+            height: 120px;
+            background: rgb(52, 227, 90);
+            left: 300px;
+            animation: totop 8s linear infinite alternate;
+            animation-delay: 1.5s;
+
+        }
+        li:nth-child(5){
+            width: 50px;
+            height: 50px;
+            background: rgb(52, 227, 90);
+            position: absolute;
+            left: 400px;
+            animation: totop 8s linear infinite alternate;
+            animation-delay: 2s;
+
+        }
+        li:nth-child(6){
+            width: 50px;
+            height: 50px;
+            background: rgb(52, 227, 90);
+            position: absolute;
+            /* bottom: 0px; */
+            left: 600px;
+            animation: totop 8s linear infinite alternate;
+            animation-delay: 0.5s;
+
+        }
+        li:nth-child(7){
+            width: 50px;
+            height: 50px;
+            background: rgb(52, 227, 90);
+            position: absolute;
+            /* bottom: 0px; */
+            left: 880px;
+            animation: totop 8s linear infinite alternate;
+            animation-delay: 1s;
+        }
+        li:nth-child(8){
+            width: 50px;
+            height: 50px;
+            background: rgb(52, 227, 90);
+            position: absolute;
+            left: 1220px;
+            animation: totop 8s linear infinite alternate; 
+            animation-delay: 1.5s;
+        }
+        li:nth-child(9){
+            width: 100px;
+            height: 100px;
+            background: rgb(52, 227, 90);
+            position: absolute;
+            /* bottom: 0px; */
+            left: 1000px;
+            animation: totop 8s linear infinite alternate;
+            animation-delay: 2s;
+        }
+        li:nth-child(10){
+            width: 150px;
+            height: 150px;
+            background: rgb(52, 227, 90);
+            position: absolute;
+            /* bottom: 0px; */
+            left: 1400px;
+            animation: totop 8s linear infinite alternate;
+            animation-delay: 2s;
+        }
+
+        @keyframes totop {
+            0%{
+                transform: translateY(0px) rotate(0deg);
+            }
+            100%{
+                transform: translateY(-120vh) rotate(360deg);
+                border-radius: 50%;
+            }
+        }
     </style>
 </head>
 
 <body>
-
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
     <div class="main">
             <span class="bgm">
                 <svg class="bgm-icon" aria-hidden="true">
@@ -275,7 +405,7 @@
             <a href="./pages/resume.html">简历</a>/
             <a href="./pages/front.html">学习路线图</a>/
             <a href="./pages/photo.html">life</a>/
-            <a href="./pages/case.html">Case</a>/
+            <a href="./pages/case.html">Case</a>
         </header>
         
 
