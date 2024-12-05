@@ -22,11 +22,12 @@
         border-radius: 38px;
         font-size: 30px;
         background-size: 400%;
-        transition: 0.5s all linear;
+        transition: 0.1s all linear;
     }
     button:hover{
         color: black;
         animation: animate 8s linear infinite;
+        cursor: pointer;
     }
     @keyframes animate{
         from{
@@ -57,6 +58,15 @@
     <button class="btn">Button</button>
     <script>
         let btn = document.querySelector('.btn');
+        btn.onmousedown = function(){
+            btn.style.transform = "scale(0.95)";
+        }
+        btn.onclick = function(){
+            alert('clicked');
+        }
+        btn.onmouseup = function(){
+            btn.style.transform = "scale(1)";
+        }
     </script>
 </body>
 </html>
