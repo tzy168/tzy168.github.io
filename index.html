@@ -31,9 +31,14 @@
             transition: all 0.1s linear;
             display: inline-block;
             position: relative;
+            margin-right: 1vw;
+            padding: 5px;
+            border-radius: 5px;
         }
         a:hover{
             transform: translateY(-2px);
+            background: #c6c0c083;
+            color: #000;
         }
 
         a::after {
@@ -372,6 +377,15 @@
                 border-radius: 50%;
             }
         }
+
+        .flex-nav{
+            display: flex;
+            background: rgba(155, 141, 141, 0.493);
+            height: 5vh;
+            border-radius: 5px;
+            align-items: center;
+            justify-content: start;
+        }
     </style>
 </head>
 
@@ -389,26 +403,24 @@
         <li></li>
     </ul>
     <div class="main">
-            <span class="bgm">
-                <svg class="bgm-icon" aria-hidden="true">
-                    <use xlink:href="#icon-vynil"></use>
-                </svg>                
-                <audio class="bgm" src="./bgm.ogg" autoplay></audio>
-            </span>
-
+            <div class="flex-nav">
+                <span class="bgm">
+                    <svg class="bgm-icon" aria-hidden="true">
+                        <use xlink:href="#icon-vynil"></use>
+                    </svg>                
+                    <audio class="bgm" src="./bgm.ogg" autoplay></audio>
+                </span>
+                <a href="../html&css/htmlcss.html">html&css</a>
+                <a href="../pages/resume.html">简历</a>
+                <a href="../pages/front.html">学习路线图</a>
+                <a href="../pages/photo.html">life</a>
+                <a href="../pages/case.html">myElement</a>
+            </div>
         <header>
             <h1 class="title">THIS IS <br>
-                
-                <span class="text"></span><br>
-                 <span class="my">MY</span> WEB</h1><br>
-            <a href="./html&css/htmlcss.html">html&css</a>/
-            <a href="./pages/resume.html">简历</a>/
-            <a href="./pages/front.html">学习路线图</a>/
-            <a href="./pages/photo.html">life</a>/
-            <a href="./pages/case.html">Case</a>
+            <span class="text"></span><br>
+            <span class="my">MY</span> WEB</h1><br>
         </header>
-        
-
     </div>        
     <footer>
         <nav class="navbar">

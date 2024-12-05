@@ -4,120 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive List Animation</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            /* background: rgb(9, 0, 0); */
-            font-family: Arial, sans-serif;
-        }
-        ul {
-            list-style: none;
-            position: relative;
-        }
-        li {
-            width: 200px;
-            height: 300px;
-            position: absolute;
-            border: 1px solid black;
-            border-radius: 10px;
-            top: 100px;
-            transition: all 0.2s linear;
-            padding: 10px;
-            color: rgb(0, 0, 0);
-            font-size: 18px;
-            /* opacity: 0.8; */
-        }
-        li:nth-child(1) {
-            transform: rotate(-45deg);
-            background: rgb(52, 227, 90);
-            left: 300px;
-        }
-        li:nth-child(2) {
-            transform: rotate(-35deg);
-            background: rgb(58, 127, 165);
-            left: 350px;
-        }
-        li:nth-child(3) {
-            transform: rotate(-25deg);
-            background: rgb(205, 243, 34);
-            left: 400px;
-        }
-        li:nth-child(4) {
-            transform: rotate(-15deg);
-            background: rgb(228, 70, 147);
-            left: 450px;
-        }
-        li:nth-child(5) {
-            transform: rotate(-5deg);
-            background: rgb(5, 136, 229);
-            left: 500px;
-        }
-        li:hover {
-            box-shadow: 0px 0px 10px rgba(57, 55, 52, 0.874);
-            z-index: 10;
-            /* width: 250px;
-            height: 375px; */
-        }
-        @keyframes activate {
-            0% {
-                transform: translateX(0px) rotate(-45deg);
-            }
-            50% {
-                transform: translateX(-200px) rotate(-45deg);
-            }
-            100% {
-                transform: translateX(0px) scale(1.5) rotate(0);
-                z-index: 10;
-            }
-        }
-        @keyframes deactivate {
-            0% {
-                transform: translateX(0px) scale(1.5) rotate(0);
-            }
-            100% {
-                transform: translateX(0px) rotate(-45deg);
-            }
-        }
-        a{
-            color: black;
-            text-decoration: none;
-        }
-        a:hover{
-            color: white;
-        }
-    </style>
+  <link rel="stylesheet" href="../Case/css/lightbtn.css">
+  <link rel="stylesheet" href="../Case/css/type.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: rgb(2, 3, 0);
+    }
+    a{
+      text-decoration: none;
+      font-size: 1.2rem;
+      color: aliceblue;
+      display: block;
+      padding: 5px;
+      border-radius: 5px;
+      max-width: 26vh;
+    }
+    a:hover{
+      background-color: rgb(56, 55, 55);
+    }
+    .container{
+        display: flex;
+        padding: 5px;
+    }
+    .nav-bar{
+        height: 100vh;
+        width: 16vw;
+        background: rgb(2, 3, 0);
+        /* border: 1px solid rgb(255, 255, 255); */
+        display: block;
+        position: sticky;
+        top: 0px;
+    }
+    .content{
+      color: aliceblue;
+      /* border: 1px solid rgb(255, 255, 255); */
+      width: 84vw;
+      margin-left: 5px;
+      display: flex;
+    }
+    .item{
+      height: 200px;
+      width: 300px;
+      background: #2d2c2c;
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 5px;
+      padding: 5px;
+    }
+    .item:hover{
+      box-shadow: 0px 0px 20px rgb(10, 115, 3);
+    }
+  </style>
 </head>
 <body>
     <div class="container">
-        <ul>
-            <li><a href="../Case/puke.html">扑克</a></li>
-            <li><a href="../Case/pbl.html">瀑布流</a></li>
-            <li><a href="../Case/bg.html">冒泡背景</a></li>
-            <li><a href="../Case/drag.html">拖拽</a></li>
-            <li><a href="../Case/lightBtn.html">LightBtn</a></li>
-        </ul>
+        <div class="nav-bar">
+            <a href="../index.html">首页</a>
+            <a href="../Case/bg.html">背景</a>
+            <a href="../Case/drag.html">拖拽</a>
+            <a href="../Case/lightBtn.html">流光按钮</a>
+            <a href="../Case/pbl.html">css瀑布流</a>
+            <a href="../Case/type.html">打字机1</a>
+            <a href="../Case/type2.html">打字机2</a>
+        </div>
+        <div class="content">
+          <div class="item item1" >
+            <button class="btn">Button</button>
+          </div>
+          <div class="item item2">
+            <input type="text" autofocus>
+          </div>
+        </div>
     </div>
-    <script>
-        const listItems = document.querySelectorAll('li');
-
-        // State tracking for animations
-        listItems.forEach((item, index) => {
-            let isActive = false; // To track if the item is active
-            item.addEventListener('click', () => {
-                if (!isActive) {
-                    // Activate animation
-                    item.style.animation = "activate 1s forwards";
-                } else {
-                    // Deactivate animation
-                    item.style.animation = "deactivate 1s forwards";
-                }
-                // Toggle active state
-                isActive = !isActive;
-            });
-        });
-    </script>
+<script src="../Case/js/type.js"></script>
 </body>
 </html>

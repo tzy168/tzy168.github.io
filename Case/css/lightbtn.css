@@ -1,0 +1,42 @@
+
+button{
+    position: relative;
+    margin:0 auto;
+    width: 200px;
+    height: 80px;
+    padding: 10px 20px;
+    background:linear-gradient(90deg,rgb(236, 89, 89), yellow, rgb(90, 236, 122), rgb(119, 119, 218),rgb(236, 89, 89));
+    color: #fff;
+    border: none;
+    border-radius: 38px;
+    font-size: 30px;
+    background-size: 400%;
+    transition: 0.5s all linear;
+}
+button:hover{
+    color: black;
+    animation: animate 8s linear infinite;
+}
+@keyframes animate{
+    from{
+        background-position: 0%;
+    }
+    to{
+        background-position: 400%;
+    }
+}
+button::before{
+    content: "";
+    position: absolute;
+    inset: 0px;
+    z-index: -1;
+    background:linear-gradient(90deg,rgb(236, 89, 89), yellow, rgb(90, 236, 122), rgb(119, 119, 218),rgb(236, 89, 89));
+    background-size: 400%;
+    border-radius: 38px;
+    transition: 0.5s all linear;
+}
+button:hover::before{
+    filter: blur(20px);
+    transition: 0.5s all linear;
+    animation: animate 12s linear infinite;
+}
